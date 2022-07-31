@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+.m0 *{
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  background-color: #303030  !important;
+  color: white  !important
+}
+
+.form {
+  border-bottom: black;
+}
+
+
+.form-control-plaintext {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: #707070 !important;
+  background-color: transparent;
+  /* border: solid transparent; */
+  border-bottom: 1px solid #707070 !important;
+  /* border-width: 1px 0; */
+}
