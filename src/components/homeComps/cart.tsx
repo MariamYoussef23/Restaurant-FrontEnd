@@ -51,7 +51,7 @@ const Cart = () => {
         style={{
           color: "white",
           backgroundColor: "#303030",
-          border: "#303030",
+          borderColor: "#303030",
         }}
       >
         <Image src={delivery} height={30} />

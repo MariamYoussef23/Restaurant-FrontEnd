@@ -4,8 +4,8 @@ import NavBar from "./components/navbar";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Footer from "./components/footer";
-import Checkout from "./components/checkout";
-import Success from "./components/success";
+import Checkout from "./pages/checkout";
+import Success from "./pages/success";
 
 
 function App(): JSX.Element { 

@@ -3,7 +3,7 @@ import { Container, Button, ButtonToolbar } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import CheckoutItem from "./checkoutItem";
+import CheckoutItem from "../components/checkoutItem";
 import { Link } from "react-router-dom";
 
 const Checkout = () => {
