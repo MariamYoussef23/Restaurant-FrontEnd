@@ -6,9 +6,9 @@ import { Image } from "react-bootstrap";
 
 const Footer = () => {
   return (
-    <div className="main">
+    <div className="main ">
       <Container>
-        <div className="d-flex py-1">
+        <div className="d-flex py-1 ">
           <div className="fw-bold  ">
             OBSD <Image src={utensils} height={25} width={20}></Image>
           </div>

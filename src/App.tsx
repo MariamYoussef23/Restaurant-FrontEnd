@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Footer from "./components/footer";
 import Checkout from "./components/checkout";
+import Success from "./components/success";
 
 
 function App(): JSX.Element { 
@@ -13,7 +14,8 @@ function App(): JSX.Element {
       <NavBar />
       <Routes>
       <Route path="/" element={<Home />}/> 
-      <Route path="/checkout" element={<Checkout />}/>   
+      <Route path="/checkout" element={<Checkout />}/>  
+      <Route path="/success" element={<Success />}/>  
       </Routes>
       <Footer />
     </div>
