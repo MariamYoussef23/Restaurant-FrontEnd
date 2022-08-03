@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/Container";
-import {ProductType} from "../../types";
+import { ProductProps} from "../../types";
 import Card from "react-bootstrap/Card";
 import { TiPlus, TiMinus } from "react-icons/ti";
 import Button from "react-bootstrap/Button";
@@ -7,7 +7,7 @@ import pizzaImg from "../../images/seafood-pizza.png";
 import { Image } from "react-bootstrap";
 import { useState } from "react";
 
-const MenuProduct = ({product}: ProductType) => {
+const MenuProduct = ({product}: ProductProps) => {
   return (
     <Card>
       <div className="row align-products-center" style={{ height: "200px" }}>

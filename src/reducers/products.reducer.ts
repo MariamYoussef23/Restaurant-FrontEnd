@@ -1,4 +1,4 @@
-import { ProductsAction } from "../types";
+import { Products, ProductsAction } from "../types";
 
 const reducer = (state = [], action: ProductsAction) => {
     switch (action.type) {
