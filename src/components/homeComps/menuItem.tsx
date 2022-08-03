@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/Container";
-import { AppTypes } from "../../types";
+import {ProductType} from "../../types";
 import Card from "react-bootstrap/Card";
 import { TiPlus, TiMinus } from "react-icons/ti";
 import Button from "react-bootstrap/Button";
@@ -7,24 +7,22 @@ import pizzaImg from "../../images/seafood-pizza.png";
 import { Image } from "react-bootstrap";
 import { useState } from "react";
 
-const MenuItem = ({ item }: AppTypes) => {
+const MenuProduct = ({product}: ProductType) => {
   return (
     <Card>
-      <div className="row align-items-center" style={{ height: "200px" }}>
+      <div className="row align-products-center" style={{ height: "200px" }}>
         <div className="col-4 ">
           <Image src={pizzaImg} width="130" />
         </div>
 
         <div className="col-8">
-          <h5>{item?.name}</h5>
+          <h5>{product?.name}</h5>
 
-          {item?.ingredients?.map((ingredient) => (
-            <div key={Math.random()}>
-              <p className="text-muted m-0 ">{ingredient},</p>
-            </div>
-          ))}
+          {product?.description}
 
-          <p>Price: L.E {item?.price}</p>
+          
+
+          <p>Price: L.E {product?.price}</p>
 
           <div>
             <Button
@@ -61,4 +59,4 @@ const MenuItem = ({ item }: AppTypes) => {
   );
 };
 
-export default MenuItem;
+export default MenuProduct;

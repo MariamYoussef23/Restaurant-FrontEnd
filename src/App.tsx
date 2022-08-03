@@ -6,6 +6,7 @@ import Home from "./pages/home";
 import Footer from "./components/footer";
 import Checkout from "./pages/checkout";
 import Success from "./pages/success";
+import Kitchen from "./pages/kitchen";
 
 
 function App(): JSX.Element { 
@@ -16,6 +17,7 @@ function App(): JSX.Element {
       <Route path="/" element={<Home />}/> 
       <Route path="/checkout" element={<Checkout />}/>  
       <Route path="/success" element={<Success />}/>  
+      <Route path="/kitchen" element={<Kitchen />}/>
       </Routes>
       <Footer />
     </div>
