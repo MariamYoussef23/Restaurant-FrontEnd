@@ -7,6 +7,7 @@ export interface AppTypes {
 }
 export interface ProductProps {
   product?: Product;
+  cartProduct?: Product
 }
 
 export interface Product {
@@ -18,6 +19,7 @@ export interface Product {
   price: number;
   popular: boolean;
   category?: Category;
+  quantity?:number;
 }
 
 export interface Category {
@@ -31,6 +33,7 @@ export interface ProductsAction {
 
 export interface Products {
   products: Product[];
+  cart: Product[]
 }
 
 export interface UpdateFilter {

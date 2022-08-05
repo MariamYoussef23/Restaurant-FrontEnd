@@ -1,10 +1,15 @@
 import pizzaImg from "../../images/seafood-pizza.png";
 import { TiPlus, TiMinus } from "react-icons/ti";
 import { Button, Card, Container, Image } from "react-bootstrap";
-import { AppTypes } from "../../types";
+import { AppTypes, Product, ProductProps } from "../../types";
 import React from "react";
+import { updateCart } from "../../utils/functions";
+import { useDispatch } from "react-redux";
 
-const CartItem =({item}: AppTypes) => {
+const CartItem =({cartProduct}: ProductProps) => {
+  const dispatch = useDispatch();
+
+
     return (
         <>
         <div className="row align-items-center" style={{ height: "200px" }}>
@@ -13,15 +18,11 @@ const CartItem =({item}: AppTypes) => {
                   </div>
           
                   <div className="col-8 w-50 h-50">
-                    <h5>{item?.name}</h5>
+                    <h5>{cartProduct?.name}</h5>
           
-                    {item?.ingredients?.map((ingredients) => (
-                      <div key={Math.random()}>
-                        <p className="text-muted m-0 ">{ingredients},</p>
-                      </div>
-                    ))}
+                    {cartProduct?.ingredients}
           
-                    <p>Price: L.E {item?.price}</p>
+                    <p>Price: L.E {cartProduct?.price}</p>
           
                     <div>
                       <Button
@@ -30,6 +31,7 @@ const CartItem =({item}: AppTypes) => {
                           backgroundColor: "white",
                           border: "white",
                         }}
+                        onClick={() => updateCart(-1, cartProduct!, dispatch)}
                       >
                         <TiMinus />
                       </Button>
@@ -40,7 +42,7 @@ const CartItem =({item}: AppTypes) => {
                           border: "grey",
                         }}
                       >
-                        0
+                        {cartProduct ? cartProduct?.quantity : 0}
                       </Button>
                       <Button
                         style={{
@@ -48,6 +50,7 @@ const CartItem =({item}: AppTypes) => {
                           backgroundColor: "white",
                           border: "white",
                         }}
+                        onClick={() => updateCart(1, cartProduct!, dispatch)}
                       >
                         <TiPlus />
                       </Button>

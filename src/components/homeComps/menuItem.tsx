@@ -1,13 +1,19 @@
 import Container from "react-bootstrap/Container";
-import { ProductProps} from "../../types";
+import { Product, ProductProps, Products } from "../../types";
 import Card from "react-bootstrap/Card";
 import { TiPlus, TiMinus } from "react-icons/ti";
 import Button from "react-bootstrap/Button";
 import pizzaImg from "../../images/seafood-pizza.png";
 import { Image } from "react-bootstrap";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { updateCart } from "../../utils/functions";
 
-const MenuProduct = ({product}: ProductProps) => {
+const MenuProduct = ({ product }: ProductProps) => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state: Products) => state.cart);
+  const cartProduct = cart.find((cart) => cart.id === product?.id);
+  
   return (
     <Card>
       <div className="row align-products-center" style={{ height: "200px" }}>
@@ -20,8 +26,6 @@ const MenuProduct = ({product}: ProductProps) => {
 
           {product?.description}
 
-          
-
           <p>Price: L.E {product?.price}</p>
 
           <div>
@@ -31,6 +35,7 @@ const MenuProduct = ({product}: ProductProps) => {
                 backgroundColor: "white",
                 border: "white",
               }}
+              onClick={() => updateCart(-1, product!, dispatch)}
             >
               <TiMinus />
             </Button>
@@ -41,7 +46,7 @@ const MenuProduct = ({product}: ProductProps) => {
                 border: "grey",
               }}
             >
-              0
+              {cartProduct ? cartProduct?.quantity : 0}
             </Button>
             <Button
               style={{
@@ -49,6 +54,7 @@ const MenuProduct = ({product}: ProductProps) => {
                 backgroundColor: "white",
                 border: "white",
               }}
+              onClick={() => updateCart(1, product!, dispatch)}
             >
               <TiPlus />
             </Button>

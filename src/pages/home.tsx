@@ -18,7 +18,7 @@ const Home = () => {
   const saveProducts = async () => {
     const products = await getProductsApi();
     dispatch(getProducts(products?.data.data));
-    console.log(products?.data.data);
+   
   };
   useEffect(() => {
     saveProducts();
@@ -47,7 +47,7 @@ const Home = () => {
         );
     }
   };
-  console.log(displayProducts());
+  
 
   return (
     <div>

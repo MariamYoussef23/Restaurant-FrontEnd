@@ -1,8 +1,16 @@
-import { Cart } from "../types"
 
-export const updateCart = (cart: Cart) =>  {
+import { Product } from "../types"
+
+export const addToCart = (product: Product) =>  {
     return {
-        type: 'UPDATE_CART',
-        payload: cart
+        type: "ADD_TO_CART",
+        payload: product
+    }
+}
+
+export const removeFromCart = (product: Product) =>  {
+    return {
+        type: 'REMOVE_FROM_CART',
+        payload: product
     }
 }

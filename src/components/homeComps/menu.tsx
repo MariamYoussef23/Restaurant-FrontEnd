@@ -5,8 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Products, DisplayProducts, Product } from "../../types";
 
 const Menu = ({displayProducts}: DisplayProducts) => {
-  const dispatch = useDispatch();
-  const products = useSelector((state: Products) => state.products);
+
 
   return (
     <>
