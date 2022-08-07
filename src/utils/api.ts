@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { Dispatch } from "redux";
+import { getOrders } from "../actions/order.actions";
 import { Product, Values } from "../types";
 
 export const getProductsApi = () => {
@@ -13,10 +14,19 @@ export const getProductsApi = () => {
 
 export const postOrder = async (values: Values, orderLines: Product[]) => {
   let order = { ...values, orderLines };
-  console.log(order);
-  console.log();
+  
   try {
     const response = await axios.post("http://localhost:5000/orders", order);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getOrdersApi = async (dispatch: Dispatch) => {
+  try {
+    const orders = await axios.get("http://localhost:5000/orders");
+    dispatch(getOrders(orders.data.data));
+    
   } catch (error) {
     console.log(error);
   }

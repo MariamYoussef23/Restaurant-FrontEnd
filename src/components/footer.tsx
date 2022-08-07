@@ -6,7 +6,7 @@ import { Image } from "react-bootstrap";
 
 const Footer = () => {
   return (
-    <div className="main ">
+    <div className="main" >
       <Container>
         <div className="d-flex py-1 ">
           <div className="fw-bold  ">

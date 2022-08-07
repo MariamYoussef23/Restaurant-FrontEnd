@@ -1,15 +1,50 @@
-import React from "react"
-import { Container } from "react-bootstrap"
-import Dashboard from "../components/kitchenComps/dashboard"
+import Dashboard from "../components/kitchenComps/dashboard";
+import KitchenOrders from "../components/kitchenComps/kitchenOrders";
+import React, { useEffect } from "react";
+import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { getOrdersApi } from "../utils/api";
+import { Orders } from "../types";
+// import "../dashboard.css";
 
 const Kitchen = () => {
-    return (
-        <>
-        <Container>
-        <Dashboard /> 
-        </Container>
-        </>
-    )
+    const dispatch = useDispatch()
+    const orders = useSelector((state: Orders)=> state.orders)
+    console.log(orders)
 
+    
+    useEffect(()=> {
+        getOrdersApi(dispatch)
+    },[])
+
+  return (
+    <div style={{ marginTop: "60px" }}>
+       <Row>
+          <Col xs={2} >
+            <Dashboard />
+          </Col>
+          <Col xs={10} >
+            <KitchenOrders />
+          </Col>
+        </Row>
+    </div>
+  );
+};
+
+export default Kitchen;
+
+
+{
+  /* <div style={{ paddingTop: "80px " }}>
+      <Container fluid>
+        <Row>
+          <Col xs={2} id="sidebar-wrapper">
+            <Dashboard />
+          </Col>
+          <Col xs={10} id="page-content-wrapper">
+            <KitchenOrders />
+          </Col>
+        </Row>
+      </Container>
+    </div> */
 }
-export default Kitchen

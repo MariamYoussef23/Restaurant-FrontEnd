@@ -22,6 +22,15 @@ export interface Product {
   category?: Category;
   quantity?:number;
 }
+export interface Order {
+  firstName: string
+  LastName: string
+  mobile: string
+  city: string 
+  address: string 
+  orderNo: number
+  orderLine: Product[]
+}
 
 export interface Category {
   id: number;
@@ -31,10 +40,18 @@ export interface ProductsAction {
   type: string;
   payload: Product;
 }
+export interface OrdersAction {
+  type: string;
+  payload: Order;
+}
 
 export interface Products {
   products: Product[];
   cart: Product[]
+}
+export interface Orders {
+  orders: Order[];
+  
 }
 
 export interface UpdateFilter {
