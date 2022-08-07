@@ -2,6 +2,7 @@ export interface AppTypes {
   item?: Product;
   show?: boolean;
   onHide?: Function;
+  onClick?: Function;
   placement?: string;
   name?: string;
 }
@@ -55,4 +56,13 @@ export interface CartItem {
 export interface CartAction {
   type: string;
   payload: Cart;
+}
+
+
+export interface Values {
+  firstName: string
+  lastName: string
+  mobile: string
+  address: string
+  city: string
 }

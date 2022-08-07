@@ -32,6 +32,9 @@ const reducer = (state: Product[] = [], action: ProductsAction) => {
       });
       return data.filter((product) => product.quantity! > 0);
 
+    case "EMPTY_CART":
+      return (state = []);
+
     default:
       return state;
   }

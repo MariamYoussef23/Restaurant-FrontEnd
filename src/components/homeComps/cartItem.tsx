@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 
 const CartItem =({cartProduct}: ProductProps) => {
   const dispatch = useDispatch();
+  
 
 
     return (

@@ -1,6 +1,6 @@
 import Modal from "react-bootstrap/Modal";
 import { AppTypes, Products } from "../../types";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import delivery from "../../images/delivery.png";
@@ -17,9 +17,16 @@ const Cart = () => {
   const handleShow = () => setShow(true);
 
   const cart = useSelector((state: Products) => state.cart);
+
   const [total, setTotal] = useState(0);
 
- 
+  useEffect(()=> {
+    let sum = 0
+    cart.map((product)=> {
+     sum = sum + (product.quantity as number * product.price)
+    })
+    setTotal(sum)
+  },[cart])
 
   return (
     <>
@@ -47,12 +54,11 @@ const Cart = () => {
               <CartItem cartProduct={cartProduct} key={cartProduct.id} />
             ))}
             <hr></hr>
-            <p>subtotal: </p>
-            <Button onClick={handleClose}>
-              <Link to="/checkout" style={{ color: "white" }}>
-                Checkout
-              </Link>
-            </Button>
+            <p>subtotal: {total} </p>
+
+            <Link to="/checkout" style={{ color: "white" }}>
+              <Button onClick={handleClose}>Checkout</Button>
+            </Link>
           </Offcanvas.Body>
         </Container>
       </Offcanvas>
