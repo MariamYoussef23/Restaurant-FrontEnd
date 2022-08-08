@@ -1,6 +1,6 @@
-import { OrdersAction } from "../types";
+import { OrdersAction, Order } from "../types";
 
-const reducer = (state = [], action: OrdersAction ) => {
+const reducer = (state : Order[]= [], action: OrdersAction ) => {
     switch (action.type) {
         case "GET_ORDERS" : 
             return action.payload;

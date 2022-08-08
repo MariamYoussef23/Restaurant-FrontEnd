@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Row } from "react-bootstrap";
 
-const Dashboard = () => {
+const Dashboard = ({updateFilter}: {updateFilter : Function}) => {
   return (
     <div className="min-vh-100 main">
       <div className="py-4">DASHBOARD</div>
@@ -13,6 +13,7 @@ const Dashboard = () => {
             backgroundColor: "#303030",
             color: "white",
           }}
+          onClick={()=> updateFilter('notCompleted')}
         >
           Pending
         </Button>
@@ -24,6 +25,7 @@ const Dashboard = () => {
             backgroundColor: "#303030",
             color: "white",
           }}
+          onClick={()=> updateFilter('Completed')}
         >
           Completed
         </Button>

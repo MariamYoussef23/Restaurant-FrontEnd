@@ -37,7 +37,7 @@ const OrderItem = ({ order }: Props) => {
               getOrdersApi(dispatch);
             }}
           >
-            Order ready!
+            {order!.completed? 'completed' : 'click here when order is ready'}
           </Button>
         </Card.Body>
       </Card>

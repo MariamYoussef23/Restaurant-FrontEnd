@@ -35,8 +35,14 @@ export interface Order {
   orderLines: OrderLine[]
   CreatedAt: string
   UpdatedAt: string
+  completed: boolean
 }
 
+export interface RootState {
+  orders: Order[]
+  products: Product[]
+  cart: Product[]
+}
 export interface OrderLine {
   id: number
   product: Product
@@ -59,13 +65,13 @@ export interface Products {
   products: Product[];
   cart: Product[]
 }
-export interface Orders {
-  orders: Order[];
-}
+// export interface Orders {
+//   orders: Order[];
+// }
 
-export interface UpdateFilter {
-  updateFilter: Function;
-}
+// export interface UpdateFilter {
+//   updateFilter: Function;
+// }
 export interface DisplayProducts {
   displayProducts: Function;
 }

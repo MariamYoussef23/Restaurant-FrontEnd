@@ -1,9 +1,9 @@
 import Container from "react-bootstrap/Container";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import { UpdateFilter } from "../../types";
 
-const Buttons = ({ updateFilter }: UpdateFilter) => {
+
+const Buttons = ({updateFilter}: {updateFilter : Function}) => {
   return (
     <Container>
       <Tabs
