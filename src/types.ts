@@ -6,9 +6,11 @@ export interface AppTypes {
   placement?: string;
   name?: string;
 }
-export interface ProductProps {
+export interface Props {
   product?: Product;
   cartProduct?: Product
+  order?: Order
+
 }
 
 export interface Product {
@@ -23,15 +25,23 @@ export interface Product {
   quantity?:number;
 }
 export interface Order {
+  id: number
   firstName: string
   LastName: string
   mobile: string
   city: string 
   address: string 
   orderNo: number
-  orderLine: Product[]
+  orderLines: OrderLine[]
+  CreatedAt: string
+  UpdatedAt: string
 }
 
+export interface OrderLine {
+  id: number
+  product: Product
+  quantity: number
+}
 export interface Category {
   id: number;
   name: string;
@@ -51,7 +61,6 @@ export interface Products {
 }
 export interface Orders {
   orders: Order[];
-  
 }
 
 export interface UpdateFilter {

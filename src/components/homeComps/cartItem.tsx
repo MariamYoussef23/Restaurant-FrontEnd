@@ -1,12 +1,12 @@
 import pizzaImg from "../../images/seafood-pizza.png";
 import { TiPlus, TiMinus } from "react-icons/ti";
 import { Button, Card, Container, Image } from "react-bootstrap";
-import { AppTypes, Product, ProductProps } from "../../types";
+import { AppTypes, Product, Props } from "../../types";
 import React from "react";
 import { updateCart } from "../../utils/functions";
 import { useDispatch } from "react-redux";
 
-const CartItem =({cartProduct}: ProductProps) => {
+const CartItem =({cartProduct}: Props) => {
   const dispatch = useDispatch();
   
 

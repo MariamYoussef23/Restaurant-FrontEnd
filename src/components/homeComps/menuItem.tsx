@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/Container";
-import { Product, ProductProps, Products } from "../../types";
+import { Product, Props, Products } from "../../types";
 import Card from "react-bootstrap/Card";
 import { TiPlus, TiMinus } from "react-icons/ti";
 import Button from "react-bootstrap/Button";
@@ -9,7 +9,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCart } from "../../utils/functions";
 
-const MenuProduct = ({ product }: ProductProps) => {
+const MenuProduct = ({ product }: Props) => {
   const dispatch = useDispatch();
   const cart = useSelector((state: Products) => state.cart);
   const cartProduct = cart.find((cart) => cart.id === product?.id);

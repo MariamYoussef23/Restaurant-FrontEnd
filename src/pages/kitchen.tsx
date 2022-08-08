@@ -10,7 +10,7 @@ import { Orders } from "../types";
 const Kitchen = () => {
     const dispatch = useDispatch()
     const orders = useSelector((state: Orders)=> state.orders)
-    console.log(orders)
+    
 
     
     useEffect(()=> {
@@ -20,11 +20,11 @@ const Kitchen = () => {
   return (
     <div style={{ marginTop: "60px" }}>
        <Row>
-          <Col xs={2} >
+          <Col xs={2} className="main">
             <Dashboard />
           </Col>
           <Col xs={10} >
-            <KitchenOrders />
+            <KitchenOrders  orders={orders} />
           </Col>
         </Row>
     </div>
