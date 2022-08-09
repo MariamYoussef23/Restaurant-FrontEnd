@@ -11,6 +11,14 @@ import { completeOrder } from "../../utils/api";
 const OrderItem = ({ order }: Props) => {
   const dispatch = useDispatch();
 
+  const timeToPrepare = () => {
+      const start = new Date(order!.CreatedAt!).getTime()
+      const current = Date.now() 
+      const time = current - start 
+      console.log(start)
+  }
+  timeToPrepare()
+
   return (
     <Container>
       <Card className="mt-2">

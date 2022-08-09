@@ -33,8 +33,8 @@ export interface Order {
   address: string 
   orderNo: number
   orderLines: OrderLine[]
-  CreatedAt: string
-  UpdatedAt: string
+  CreatedAt: Date
+  UpdatedAt: Date
   completed: boolean
 }
 
